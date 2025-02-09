@@ -158,7 +158,7 @@ export default function Page() {
           <h2 className="text-2xl font-medium mb-4 text-center">Baseline Comparison</h2>
           <p className="text-center mb-4">
             AstroDiff&apos;s performance comparison against 3 state-of-the-art turbulence mitigation models (ESTRNN,
-            TMT, DATUM)
+            TMT, DATUM) on planetary images on strong synthetic turbulence
           </p>
           <div className="bg-[#f5f5dc] p-4 rounded-lg mb-8">
             <Image
