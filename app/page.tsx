@@ -7,7 +7,7 @@ export default function Page() {
     { name: "Joonyeoup Kim", link: "#" },
     { name: "Yu Yuan", link: "https://yuanyuspace.cn/about/" },
     { name: "Xingguang Zhang", link: "https://xg416.github.io/" },
-    { name: "Xijun Wang", link: "#" },
+    { name: "Xijun Wang", link: "https://www.linkedin.com/in/xijun-wang-747475208/" },
     { name: "Stanley Chan", link: "https://engineering.purdue.edu/ChanGroup/stanleychan.html" },
   ]
 
