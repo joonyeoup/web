@@ -12,7 +12,7 @@ export default function Page() {
   ]
 
   const links = [
-    { text: "[Paper]", href: "#" },
+    // { text: "[Paper]", href: "#" },
     { text: "[Code]", href: "#" },
     { text: "[PlanetSYN]", href: "#" },
     { text: "[TechSYN]", href: "#" },
