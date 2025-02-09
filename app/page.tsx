@@ -33,7 +33,7 @@ export default function Page() {
       height: 200,
     },
     {
-      src: "/images/jupiterast.png",
+      src: "/images/jupi.png",
       alt: "Real-Image Results",
       width: 800,
       height: 300,
@@ -157,8 +157,8 @@ export default function Page() {
         <div className="w-full max-w-3xl mb-12">
           <h2 className="text-2xl font-medium mb-4 text-center">Baseline Comparison</h2>
           <p className="text-center mb-4">
-            AstroDiff's performance comparison against 3 state-of-the-art turbulence mitigation models (ESTRNN, TMT,
-            DATUM)
+            AstroDiff&apos;s performance comparison against 3 state-of-the-art turbulence mitigation models (ESTRNN,
+            TMT, DATUM)
           </p>
           <div className="bg-[#f5f5dc] p-4 rounded-lg mb-8">
             <Image
@@ -232,7 +232,7 @@ export default function Page() {
         <div className="w-full max-w-3xl mb-12">
           <h2 className="text-2xl font-medium mb-4 text-center">Real-Image Results</h2>
           <p className="text-center mb-4">
-            AstroDiff's performance evaluation on real images of Jupiter captured with Celestron NexStar 127 SLT
+            AstroDiff&apos;s performance evaluation on real images of Jupiter captured with Celestron NexStar 127 SLT
             telescope and ZWO ASI462MC camera
           </p>
           <div className="bg-[#f5f5dc] p-4 rounded-lg">
