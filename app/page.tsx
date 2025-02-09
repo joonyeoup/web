@@ -33,7 +33,7 @@ export default function Page() {
       height: 200,
     },
     {
-      src: "/images/jupi.png",
+      src: "/images/jupiterast.png",
       alt: "Real-Image Results",
       width: 800,
       height: 300,
