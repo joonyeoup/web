@@ -83,7 +83,7 @@ export default function Page() {
   }
 
   const brisqueData = {
-    header: "Method BRISQUE ↓",
+    header: "Images BRISQUE ↓",
     rows: [
       { method: "Original Images", value: "95.64" },
       { method: "Enhanced Images", value: "22.78", highlight: true },
