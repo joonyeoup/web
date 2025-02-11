@@ -23,7 +23,7 @@ export default function Page() {
 
   const images = [
     {
-      src: "/images/ww.png",
+      src: "/images/wff.gif",
       alt: "Overall Workflow",
       width: 800,
       height: 350,
@@ -227,25 +227,27 @@ export default function Page() {
                 TMT, ESTRNN) on planetary images with strong synthetic turbulence
               </p>
               <div className="bg-[#f5f5dc] p-4 rounded-lg mb-8">
-                {comparisonImages.map((row, rowIndex) => (
-                  <div key={rowIndex} className="flex flex-wrap justify-center gap-4 mb-8">
-                    {row.map((img, index) => (
-                      <div key={index} className="flex flex-col items-center">
-                        <ImageComparisonSlider
-                          originalImage={img.original}
-                          enhancedImage={img.enhanced}
-                          alt={img.alt}
-                          size={200}
-                        />
-                        <p className="mt-2 text-sm text-gray-600">{img.alt}</p>
-                      </div>
-                    ))}
-                  </div>
-                ))}
-              </div>
-              <div className="text-center mb-4 text-sm text-gray-600">
-                <span className="mr-4">← Enhanced</span>
-                <span>Original →</span>
+                <div className="flex flex-wrap justify-center gap-4">
+                  {comparisonImages.map((row, rowIndex) => (
+                    <React.Fragment key={rowIndex}>
+                      {row.map((img, index) => (
+                        <div key={index} className="flex flex-col items-center">
+                          <ImageComparisonSlider
+                            originalImage={img.original}
+                            enhancedImage={img.enhanced}
+                            alt={img.alt}
+                            size={200}
+                          />
+                          <p className="mt-2 text-sm text-gray-600">{img.alt}</p>
+                        </div>
+                      ))}
+                    </React.Fragment>
+                  ))}
+                </div>
+                <div className="text-center mt-4 text-sm text-gray-600">
+                  <span className="mr-4">← Enhanced</span>
+                  <span>Original →</span>
+                </div>
               </div>
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse text-sm">
@@ -308,7 +310,7 @@ export default function Page() {
             <div id="real-image-results" className="w-full max-w-3xl mb-12">
               <h2 className="text-2xl font-medium mb-4 text-center">Real-Image Results</h2>
               <p className="text-center mb-4">
-                Slide to compare the original and enhanced images of different planetary images. Our method significantly improves
+                Slide to compare the original and recovered images of different planets. Our method significantly improves
                 the image quality while preserving important details.
               </p>
               <div className="bg-[#f5f5dc] p-4 rounded-lg">
