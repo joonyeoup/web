@@ -136,8 +136,8 @@ export default function Page() {
       alt: "Jupiter",
     },
     {
-      original: "/images/badjup1.png",
-      enhanced: "/images/bdmjup1.png",
+      original: "/images/badjup11.png",
+      enhanced: "/images/bdmjup11.png",
       alt: "Jupiter",
     },
     {
