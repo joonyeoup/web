@@ -15,10 +15,10 @@ export default function Page() {
   ]
 
   const links = [
-    { text: "[Code]", href: "#" },
-    { text: "[PlanetSYN]", href: "#" },
-    { text: "[TechSYN]", href: "#" },
-    { text: "[AstroEV]", href: "#" },
+    { text: "Code", href: "#" },
+    { text: "PlanetSYN", href: "#" },
+    { text: "TechSYN", href: "#" },
+    { text: "AstroEV", href: "#" },
   ]
 
   const images = [
@@ -228,7 +228,11 @@ export default function Page() {
                   </div>
                 ))}
               </div>
-              <div className="overflow-x-auto mt-8">
+              <div className="text-center mb-4 text-sm text-gray-600">
+                <span className="mr-4">← Enhanced</span>
+                <span>Original →</span>
+              </div>
+              <div className="overflow-x-auto">
                 <table className="w-full border-collapse text-sm">
                   <thead>
                     <tr>
@@ -282,10 +286,6 @@ export default function Page() {
                     ))}
                   </tbody>
                 </table>
-              </div>
-              <div className="text-center mt-4 text-sm text-gray-600">
-                <span className="mr-4">← Enhanced</span>
-                <span>Original →</span>
               </div>
             </div>
 
