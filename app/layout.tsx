@@ -1,5 +1,8 @@
 import "./globals.css"
 import type React from "react"
+import { Outfit } from "next/font/google"
+
+const outfit = Outfit({ subsets: ["latin"] })
 
 export default function RootLayout({
   children,
@@ -7,10 +10,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className="min-h-screen bg-white flex justify-center">
-        <div className="w-full">{children}</div>
-      </body>
+    <html lang="en" className={outfit.className}>
+      <body className="min-h-screen bg-white">{children}</body>
     </html>
   )
 }
