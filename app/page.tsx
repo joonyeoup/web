@@ -3,7 +3,7 @@ import Link from "next/link"
 import { Sidebar } from "../components/Sidebar"
 import { Button } from "../components/ui/button"
 import { ImageComparisonSlider } from "../components/ImageComparisonSlider"
-import React from "react" // Added import for React
+import React from "react" 
 
 export default function Page() {
   const authors = [
