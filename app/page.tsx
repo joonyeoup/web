@@ -116,34 +116,34 @@ export default function Page() {
 
   const realImageComparisons = [
     {
-      original: "/images/sat_blur.png",
-      enhanced: "/images/bdm_saturn.png",
-      alt: "Saturn Collected by Hubble",
-    },
-    {
-      original: "/images/blurrySat.png",
-      enhanced: "/images/bdm_sat2.png",
-      alt: "Saturn",
+      original: "/images/wtf.jpg",
+      enhanced: "/images/bdm_wtf.jpeg",
+      alt: "Jupiter collected by ZWOASI224MC",
     },
     {
       original: "/images/mars_blur.png",
       enhanced: "/images/bdm_yel.jpeg",
-      alt: "Mars",
+      alt: "Venus collected by QHY5LII-C",
     },
     {
-      original: "/images/wtf.jpg",
-      enhanced: "/images/bdm_wtf.jpeg",
-      alt: "Jupiter",
-    },
+      original: "/images/blurrySat.png",
+      enhanced: "/images/bdm_sat2.png",
+      alt: "Saturn collected by Skywatcher",
+    },  
     {
       original: "/images/badjup11.png",
       enhanced: "/images/bdmjup11.png",
-      alt: "Jupiter",
+      alt: "Jupiter collected by  ZWOASI462MC",
     },
     {
-      original: "/images/badjup2.png",
-      enhanced: "/images/fixjup2.png",
-      alt: "Jupiter",
+      original: "/images/sat_blur.png",
+      enhanced: "/images/bdm_saturn.png",
+      alt: "Saturn collected by Hubble",
+    },
+    {
+      original: "/images/marss.jpg",
+      enhanced: "/images/bdm_marss.png",
+      alt: "Mars collected by iphone",
     },
   ]
 
