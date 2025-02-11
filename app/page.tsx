@@ -308,7 +308,7 @@ export default function Page() {
             <div id="real-image-results" className="w-full max-w-3xl mb-12">
               <h2 className="text-2xl font-medium mb-4 text-center">Real-Image Results</h2>
               <p className="text-center mb-4">
-                Slide to compare the original and enhanced images of celestial bodies. Our method significantly improves
+                Slide to compare the original and enhanced images of different planetary images. Our method significantly improves
                 the image quality while preserving important details.
               </p>
               <div className="bg-[#f5f5dc] p-4 rounded-lg">
