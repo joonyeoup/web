@@ -1,9 +1,9 @@
 import Image from "next/image"
 import Link from "next/link"
-import React from "react"
 import { Sidebar } from "../components/Sidebar"
 import { Button } from "../components/ui/button"
 import { ImageComparisonSlider } from "../components/ImageComparisonSlider"
+import React from "react" // Added import for React
 
 export default function Page() {
   const authors = [
@@ -15,10 +15,10 @@ export default function Page() {
   ]
 
   const links = [
-    { text: "Code", href: "#" },
-    { text: "PlanetSYN", href: "#" },
-    { text: "TechSYN", href: "#" },
-    { text: "AstroEV", href: "#" },
+    { text: "[Code]", href: "#" },
+    { text: "[PlanetSYN]", href: "#" },
+    { text: "[TechSYN]", href: "#" },
+    { text: "[AstroEV]", href: "#" },
   ]
 
   const images = [
@@ -29,14 +29,8 @@ export default function Page() {
       height: 350,
     },
     {
-      src: "/images/blf.png",
-      alt: "Baseline Comparison",
-      width: 800,
-      height: 200,
-    },
-    {
-      original: "/images/saturn2_blur.jpg",
-      enhanced: "/images/fixsatrun.jpg",
+      original: "/images/moon.png",
+      enhanced: "/images/bdm_moon.png",
       alt: "Moon Image Comparison",
       width: 400,
       height: 225,
@@ -94,6 +88,33 @@ export default function Page() {
   }
 
   const comparisonImages = [
+    // AstroDiff comparisons
+    [
+      { original: "/images/moon.png", enhanced: "/images/bdm_moon.png", alt: "Moon - AstroDiff" },
+      { original: "/images/merc.png", enhanced: "/images/bdm_merc.png", alt: "Mercury - AstroDiff" },
+      { original: "/images/jupiterb.png", enhanced: "/images/bdm_jup.png", alt: "Jupiter - AstroDiff" },
+    ],
+    // DATUM comparisons
+    [
+      { original: "/images/moon.png", enhanced: "/images/datum_moon.png", alt: "Moon - DATUM" },
+      { original: "/images/merc.png", enhanced: "/images/datum_merc.png", alt: "Mercury - DATUM" },
+      { original: "/images/jupiterb.png", enhanced: "/images/datum_jup.png", alt: "Jupiter - DATUM" },
+    ],
+    // TMT comparisons
+    [
+      { original: "/images/moon.png", enhanced: "/images/tmt_moon.png", alt: "Moon - TMT" },
+      { original: "/images/merc.png", enhanced: "/images/tmt_merc.png", alt: "Mercury - TMT" },
+      { original: "/images/jupiterb.png", enhanced: "/images/tmt_jup.png", alt: "Jupiter - TMT" },
+    ],
+    // ESTRNN comparisons
+    [
+      { original: "/images/moon.png", enhanced: "/images/estrnn_moon.png", alt: "Moon - ESTRNN" },
+      { original: "/images/merc.png", enhanced: "/images/estrnn_merc.png", alt: "Mercury - ESTRNN" },
+      { original: "/images/jupiterb.png", enhanced: "/images/estrnn_jup.png", alt: "Jupiter - ESTRNN" },
+    ],
+  ]
+
+  const realImageComparisons = [
     {
       original: "/images/sat_blur.png",
       enhanced: "/images/bdm_saturn.png",
@@ -187,21 +208,27 @@ export default function Page() {
             <div id="baseline-comparison" className="w-full max-w-3xl mb-12">
               <h2 className="text-2xl font-medium mb-4 text-center">Baseline Comparison</h2>
               <p className="text-center mb-4">
-                AstroDiff&apos;s performance comparison against 3 state-of-the-art turbulence mitigation models (ESTRNN,
-                TMT, DATUM) on planetary images on strong synthetic turbulence
+                AstroDiff&apos;s performance comparison against 3 state-of-the-art turbulence mitigation models (DATUM,
+                TMT, ESTRNN) on planetary images with strong synthetic turbulence
               </p>
               <div className="bg-[#f5f5dc] p-4 rounded-lg mb-8">
-                <Image
-                  src={images[1].src || "/placeholder.svg"}
-                  alt={images[1].alt}
-                  width={images[1].width}
-                  height={images[1].height}
-                  className="max-w-full h-auto"
-                />
+                {comparisonImages.map((row, rowIndex) => (
+                  <div key={rowIndex} className="flex flex-wrap justify-center gap-4 mb-8">
+                    {row.map((img, index) => (
+                      <div key={index} className="flex flex-col items-center">
+                        <ImageComparisonSlider
+                          originalImage={img.original}
+                          enhancedImage={img.enhanced}
+                          alt={img.alt}
+                          size={200}
+                        />
+                        <p className="mt-2 text-sm text-gray-600">{img.alt}</p>
+                      </div>
+                    ))}
+                  </div>
+                ))}
               </div>
-
-              {/* Performance Comparison Table */}
-              <div className="overflow-x-auto">
+              <div className="overflow-x-auto mt-8">
                 <table className="w-full border-collapse text-sm">
                   <thead>
                     <tr>
@@ -256,6 +283,10 @@ export default function Page() {
                   </tbody>
                 </table>
               </div>
+              <div className="text-center mt-4 text-sm text-gray-600">
+                <span className="mr-4">← Enhanced</span>
+                <span>Original →</span>
+              </div>
             </div>
 
             {/* Real-Image Results */}
@@ -267,7 +298,7 @@ export default function Page() {
               </p>
               <div className="bg-[#f5f5dc] p-4 rounded-lg">
                 <div className="flex flex-wrap justify-center gap-4">
-                  {comparisonImages.map((img, index) => (
+                  {realImageComparisons.map((img, index) => (
                     <div key={index} className="flex flex-col items-center">
                       <ImageComparisonSlider
                         originalImage={img.original}
