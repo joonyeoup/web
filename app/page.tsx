@@ -143,7 +143,7 @@ export default function Page() {
     {
       original: "/images/marss.jpg",
       enhanced: "/images/bdm_marss.png",
-      alt: "Mars collected by iphone",
+      alt: "Mars collected by iphone 12",
     },
   ]
 
