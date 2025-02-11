@@ -15,10 +15,10 @@ export default function Page() {
   ]
 
   const links = [
-    { text: "[Code]", href: "#" },
-    { text: "[PlanetSYN]", href: "#" },
-    { text: "[TechSYN]", href: "#" },
-    { text: "[AstroEV]", href: "#" },
+    { text: "Code", href: "#" },
+    { text: "PlanetSYN", href: "#" },
+    { text: "TechSYN", href: "#" },
+    { text: "AstroEV", href: "#" },
   ]
 
   const images = [
@@ -100,14 +100,14 @@ export default function Page() {
       alt: "Saturn Collected by Hubble",
     },
     {
-      original: "/images/merc.png",
-      enhanced: "/images/bdm_merc.png",
-      alt: "Mercury",
+      original: "/images/blurrySat.png",
+      enhanced: "/images/bdm_sat2.png",
+      alt: "Saturn",
     },
     {
-      original: "/images/jupiterb.png",
-      enhanced: "/images/bdm_jup.png",
-      alt: "Jupiter",
+      original: "/images/mars_blur.png",
+      enhanced: "/images/bdm_yel.jpeg",
+      alt: "Mars",
     },
   ]
 
