@@ -3,6 +3,7 @@ import Link from "next/link"
 import React from "react"
 import { Sidebar } from "../components/Sidebar"
 import { Button } from "../components/ui/button"
+import { ImageComparisonSlider } from "../components/ImageComparisonSlider"
 
 export default function Page() {
   const authors = [
@@ -14,10 +15,10 @@ export default function Page() {
   ]
 
   const links = [
-    { text: "Code", href: "#" },
-    { text: "PlanetSYN", href: "#" },
-    { text: "TechSYN", href: "#" },
-    { text: "AstroEV", href: "#" },
+    { text: "[Code]", href: "#" },
+    { text: "[PlanetSYN]", href: "#" },
+    { text: "[TechSYN]", href: "#" },
+    { text: "[AstroEV]", href: "#" },
   ]
 
   const images = [
@@ -34,10 +35,11 @@ export default function Page() {
       height: 200,
     },
     {
-      src: "/images/jupiter.png",
-      alt: "Real-Image Results",
-      width: 800,
-      height: 300,
+      original: "/images/saturn2_blur.jpg",
+      enhanced: "/images/fixsatrun.jpg",
+      alt: "Moon Image Comparison",
+      width: 400,
+      height: 225,
     },
   ]
 
@@ -90,6 +92,24 @@ export default function Page() {
       { method: "Enhanced Images", value: "22.78", highlight: true },
     ],
   }
+
+  const comparisonImages = [
+    {
+      original: "/images/sat_blur.png",
+      enhanced: "/images/bdm_saturn.png",
+      alt: "Saturn Collected by Hubble",
+    },
+    {
+      original: "/images/merc.png",
+      enhanced: "/images/bdm_merc.png",
+      alt: "Mercury",
+    },
+    {
+      original: "/images/jupiterb.png",
+      enhanced: "/images/bdm_jup.png",
+      alt: "Jupiter",
+    },
+  ]
 
   return (
     <div className="flex">
@@ -242,17 +262,27 @@ export default function Page() {
             <div id="real-image-results" className="w-full max-w-3xl mb-12">
               <h2 className="text-2xl font-medium mb-4 text-center">Real-Image Results</h2>
               <p className="text-center mb-4">
-                AstroDiff&apos;s performance evaluation on real images of Jupiter captured with Celestron NexStar 127
-                SLT telescope and ZWO ASI462MC camera
+                Slide to compare the original and enhanced images of celestial bodies. Our method significantly improves
+                the image quality while preserving important details.
               </p>
               <div className="bg-[#f5f5dc] p-4 rounded-lg">
-                <Image
-                  src={images[2].src || "/placeholder.svg"}
-                  alt={images[2].alt}
-                  width={images[2].width}
-                  height={images[2].height}
-                  className="max-w-full h-auto"
-                />
+                <div className="flex flex-wrap justify-center gap-4">
+                  {comparisonImages.map((img, index) => (
+                    <div key={index} className="flex flex-col items-center">
+                      <ImageComparisonSlider
+                        originalImage={img.original}
+                        enhancedImage={img.enhanced}
+                        alt={img.alt}
+                        size={200}
+                      />
+                      <p className="mt-2 text-sm text-gray-600">{img.alt}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="text-center mt-4 text-sm text-gray-600">
+                  <span className="mr-4">← Enhanced</span>
+                  <span>Original →</span>
+                </div>
               </div>
               <div className="overflow-x-auto mt-8">
                 <table className="w-full border-collapse text-sm">
