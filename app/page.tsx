@@ -130,6 +130,21 @@ export default function Page() {
       enhanced: "/images/bdm_yel.jpeg",
       alt: "Mars",
     },
+    {
+      original: "/images/wtf.jpg",
+      enhanced: "/images/bdm_wtf.jpeg",
+      alt: "Jupiter",
+    },
+    {
+      original: "/images/badjup1.png",
+      enhanced: "/images/bdmjup1.png",
+      alt: "Jupiter",
+    },
+    {
+      original: "/images/badjup2.png",
+      enhanced: "/images/fixjup2.png",
+      alt: "Jupiter",
+    },
   ]
 
   return (
