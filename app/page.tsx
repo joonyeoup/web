@@ -7,7 +7,7 @@ import React from "react"
 
 export default function Page() {
   const authors = [
-    { name: "Joonyeoup Kim", link: "#" },
+    { name: "Joonyeoup Kim", link: "https://www.linkedin.com/in/joonyeoup-kim-233881226/" },
     { name: "Yu Yuan", link: "https://yuanyuspace.cn/about/" },
     { name: "Xingguang Zhang", link: "https://xg416.github.io/" },
     { name: "Xijun Wang", link: "https://www.linkedin.com/in/xijun-wang-747475208/" },
