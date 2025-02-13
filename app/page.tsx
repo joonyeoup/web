@@ -3,11 +3,11 @@ import Link from "next/link"
 import { Sidebar } from "../components/Sidebar"
 import { Button } from "../components/ui/button"
 import { ImageComparisonSlider } from "../components/ImageComparisonSlider"
-import React from "react" 
+import React from "react" // Added import for React
 
 export default function Page() {
   const authors = [
-    { name: "Joonyeoup Kim", link: "https://www.linkedin.com/in/joonyeoup-kim-233881226/" },
+    { name: "Joonyeoup Kim", link: "#" },
     { name: "Yu Yuan", link: "https://yuanyuspace.cn/about/" },
     { name: "Xingguang Zhang", link: "https://xg416.github.io/" },
     { name: "Xijun Wang", link: "https://www.linkedin.com/in/xijun-wang-747475208/" },
@@ -91,27 +91,28 @@ export default function Page() {
     // AstroDiff comparisons
     [
       { original: "/images/moon.png", enhanced: "/images/bdm_moon.png", alt: "Moon - AstroDiff" },
-      { original: "/images/merc.png", enhanced: "/images/bdm_merc.png", alt: "Mercury - AstroDiff" },
-      { original: "/images/jupiterb.png", enhanced: "/images/bdm_jup.png", alt: "Jupiter - AstroDiff" },
+      { original: "/images/moon.png", enhanced: "/images/datum_moon.png", alt: "Moon - DATUM" },
+      { original: "/images/moon.png", enhanced: "/images/tmt_moon.png", alt: "Moon - TMT" },
+      { original: "/images/moon.png", enhanced: "/images/estrnn_moon.png", alt: "Moon - ESTRNN" },
+
     ],
     // DATUM comparisons
     [
-      { original: "/images/moon.png", enhanced: "/images/datum_moon.png", alt: "Moon - DATUM" },
+      { original: "/images/merc.png", enhanced: "/images/bdm_merc.png", alt: "Mercury - AstroDiff" },
       { original: "/images/merc.png", enhanced: "/images/datum_merc.png", alt: "Mercury - DATUM" },
-      { original: "/images/jupiterb.png", enhanced: "/images/datum_jup.png", alt: "Jupiter - DATUM" },
+      { original: "/images/merc.png", enhanced: "/images/tmt_merc.png", alt: "Mercury - TMT" },
+      { original: "/images/merc.png", enhanced: "/images/estrnn_merc.png", alt: "Mercury - ESTRNN" },
+
     ],
     // TMT comparisons
     [
-      { original: "/images/moon.png", enhanced: "/images/tmt_moon.png", alt: "Moon - TMT" },
-      { original: "/images/merc.png", enhanced: "/images/tmt_merc.png", alt: "Mercury - TMT" },
+      { original: "/images/jupiterb.png", enhanced: "/images/bdm_jup.png", alt: "Jupiter - AstroDiff" },
+      { original: "/images/jupiterb.png", enhanced: "/images/datum_jup.png", alt: "Jupiter - DATUM" },
       { original: "/images/jupiterb.png", enhanced: "/images/tmt_jup.png", alt: "Jupiter - TMT" },
+      { original: "/images/jupiterb.png", enhanced: "/images/estrnn_jup.png", alt: "Jupiter - ESTRNN" },
+
     ],
     // ESTRNN comparisons
-    [
-      { original: "/images/moon.png", enhanced: "/images/estrnn_moon.png", alt: "Moon - ESTRNN" },
-      { original: "/images/merc.png", enhanced: "/images/estrnn_merc.png", alt: "Mercury - ESTRNN" },
-      { original: "/images/jupiterb.png", enhanced: "/images/estrnn_jup.png", alt: "Jupiter - ESTRNN" },
-    ],
   ]
 
   const realImageComparisons = [
@@ -227,21 +228,21 @@ export default function Page() {
                 TMT, ESTRNN) on planetary images with strong synthetic turbulence
               </p>
               <div className="bg-[#f5f5dc] p-4 rounded-lg mb-8">
-                <div className="flex flex-wrap justify-center gap-4">
+                <div className="flex flex-col gap-8">
                   {comparisonImages.map((row, rowIndex) => (
-                    <React.Fragment key={rowIndex}>
+                    <div key={rowIndex} className="flex flex-wrap justify-center gap-4">
                       {row.map((img, index) => (
                         <div key={index} className="flex flex-col items-center">
                           <ImageComparisonSlider
                             originalImage={img.original}
                             enhancedImage={img.enhanced}
                             alt={img.alt}
-                            size={200}
+                            size={170}
                           />
                           <p className="mt-2 text-sm text-gray-600">{img.alt}</p>
                         </div>
                       ))}
-                    </React.Fragment>
+                    </div>
                   ))}
                 </div>
                 <div className="text-center mt-4 text-sm text-gray-600">
@@ -310,7 +311,7 @@ export default function Page() {
             <div id="real-image-results" className="w-full max-w-3xl mb-12">
               <h2 className="text-2xl font-medium mb-4 text-center">Real-Image Results</h2>
               <p className="text-center mb-4">
-                Slide to compare the original and recovered images of different planets. Our method significantly improves
+                Slide to compare the original and enhanced images of celestial bodies. Our method significantly improves
                 the image quality while preserving important details.
               </p>
               <div className="bg-[#f5f5dc] p-4 rounded-lg">
